@@ -1,0 +1,34 @@
+class_name TestBuilder
+extends RefCounted
+
+var _expressions: Array[Expression] = []
+
+func expect(expression: Callable, error_msg: String = "") -> TestBuilder:
+	_expressions.append(Expression.new(expression, error_msg))	
+	return self
+
+func run() -> Array[Result]:
+	var results = []
+	for expr: Expression in _expressions:
+		if expr.call() == false:
+			return Result.new(false, expr.error_msg)
+		else:
+			return Result.new(true)
+	return results
+
+class Result:
+	var success: bool
+	var error_msg: String
+
+	func _init(_success: bool, _error_msg: String = "") -> void:
+		success = _success
+		error_msg = _error_msg
+
+class Expression:
+	var expr: Callable
+	var error_msg: String
+
+	func _init(_expr: Callable[bool], _error_msg: String) -> void:
+		expr = _expr
+		error_msg = _error_msg
+	

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://boaw44ocirg83"]
+
+[ext_resource type="Script" uid="uid://bnajaafsnydhp" path="res://scripts/test_system.gd" id="1_errlg"]
+[ext_resource type="Script" uid="uid://dnfa4ipmmyq70" path="res://test/test_test.gd" id="2_bl13t"]
+
+[node name="Test" type="Node2D"]
+
+[node name="TestSystem" type="Node" parent="."]
+script = ExtResource("1_errlg")
+metadata/_custom_type_script = "uid://bnajaafsnydhp"
+
+[node name="Node" type="Node" parent="TestSystem"]
+script = ExtResource("2_bl13t")
