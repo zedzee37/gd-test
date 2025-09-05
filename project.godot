@@ -19,11 +19,14 @@ config/icon="res://icon.svg"
 
 project/assembly_name="GD Test"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gd_test/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
-"res://assets/": "green",
-"res://scenes/": "red",
-"res://scripts/": "purple",
-"res://test/": "orange"
+"res://addons/gd_test/scenes/": "red",
+"res://addons/gd_test/scripts/": "purple",
+"res://addons/gd_test/test/": "orange"
 }
