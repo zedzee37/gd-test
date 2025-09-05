@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://ehw8imbw1yjq"]
+
+[ext_resource type="Script" uid="uid://bfsh82i5w413i" path="res://addons/gd_test/scripts/test_dock.gd" id="1_x1xak"]
+
+[node name="Test" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x1xak")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PathText" type="TextEdit" parent="GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Enter Test Manager Directory"
+
+[node name="ScanButton" type="Button" parent="GridContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+text = "Scan For Test Managers"
+
+[node name="Tree" type="Tree" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="pressed" from="GridContainer/ScanButton" to="." method="_on_scan_button_pressed"]
