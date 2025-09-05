@@ -3,6 +3,11 @@ extends RefCounted
 
 var results: Array[Result] = []
 
+var test: Test
+
+func _init(_test: Test) -> void:
+	test = _test
+
 func expect(expression: bool, test_info: TestInfo = TestInfo.new()) -> TestBuilder:
 	results.append(Result.new(expression, test_info))
 	return self
