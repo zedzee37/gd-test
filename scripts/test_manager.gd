@@ -19,6 +19,8 @@ func _ready() -> void:
 		if not sys.ran:
 			await sys.ran_tests
 
+		sys.queue_free()
+
 func _scan_test_directory() -> Array[PackedScene]:
 	var test_scenes: Array[PackedScene] = []
 
