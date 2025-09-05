@@ -20,21 +20,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PathText" type="TextEdit" parent="GridContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-size_flags_horizontal = 3
-placeholder_text = "Enter Test Manager Directory"
-
-[node name="ScanButton" type="Button" parent="GridContainer"]
+[node name="FolderSelectButton" type="Button" parent="GridContainer"]
+z_index = 1
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Scan For Test Managers"
+text = "Select Folder"
+
+[node name="DirectoryLabel" type="Label" parent="GridContainer"]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
 
 [node name="Tree" type="Tree" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="pressed" from="GridContainer/ScanButton" to="." method="_on_scan_button_pressed"]
+[connection signal="pressed" from="GridContainer/FolderSelectButton" to="." method="_on_folder_select_button_pressed"]

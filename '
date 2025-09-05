@@ -1,0 +1,21 @@
+@tool
+extends Control
+
+var _target_folder: String = ""
+
+func _on_folder_select_button_pressed() -> void:
+
+	var dialog := EditorFileDialog.new()
+	dialog.file_mode = EditorFileDialog.FILE_MODE_OPEN_DIR
+
+	var screen_size := DisplayServer.screen_get_size()
+	
+	dialog.size = screen_size / 2
+
+	add_child(dialog)
+
+	dialog.move_to_center()
+	dialog.show()
+
+func _on_folder_select_dialog_dir_selected(dir: String) -> void:
+	pass # Replace with function body.
