@@ -6,4 +6,5 @@
 
 [node name="TestManager" type="Node" parent="."]
 script = ExtResource("1_errlg")
+test_path = "res://addons/gd_test/test"
 metadata/_custom_type_script = "uid://dvayrxsmwvjxg"
