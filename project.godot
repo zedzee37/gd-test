@@ -26,6 +26,7 @@ enabled=PackedStringArray("res://addons/gd_test/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://addons/gd_test/assets/": "green",
 "res://addons/gd_test/scenes/": "red",
 "res://addons/gd_test/scripts/": "purple",
 "res://addons/gd_test/test/": "orange"
