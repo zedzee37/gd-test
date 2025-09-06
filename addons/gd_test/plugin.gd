@@ -1,7 +1,9 @@
 @tool
 extends EditorPlugin
 
+
 var dock: Control
+
 
 func _enter_tree() -> void:
 	dock = preload("res://addons/gd_test/scenes/dock.tscn").instantiate()
@@ -9,9 +11,11 @@ func _enter_tree() -> void:
 
 	dock.run_scene.connect(_run_scene)
 
+
 func _exit_tree() -> void:
 	remove_control_from_docks(dock)
 	dock.free()
+
 
 func _run_scene(path: String) -> void:
 	var maybe_scene = load(path)

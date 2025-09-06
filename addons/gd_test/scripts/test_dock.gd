@@ -1,19 +1,24 @@
 @tool
 extends Control
 
+
 signal run_scene(path: String)
+
 
 @onready var _directory_label: Label = %DirectoryLabel
 @onready var test_group_vbox: VBoxContainer = %TestGroupVBox
 
+
 const TEST_GROUP_SCENE: PackedScene = preload("res://addons/gd_test/scenes/test_group.tscn")
 
-var dialog: EditorFileDialog
 
+var dialog: EditorFileDialog
 var _target_folder: String = "res://scenes/test/":
 	set(value):
 		_target_folder = value
+
 		_directory_label.text = _get_target_folder_text(value)
+
 
 func _ready() -> void:
 	_directory_label.text = _get_target_folder_text(_target_folder)
@@ -32,12 +37,15 @@ func _ready() -> void:
 
 	visibility_changed.connect(func(): _on_folder_select_dialog_dir_selected(_target_folder))
 
+
 func _get_target_folder_text(dir: String) -> String:
 	return "Current Directory: " + dir
+
 
 func _on_folder_select_button_pressed() -> void:
 	dialog.move_to_center()
 	dialog.show()
+
 
 func _on_folder_select_dialog_dir_selected(dir: String) -> void:
 	if dir[-1] != "/":
@@ -55,6 +63,7 @@ func _on_folder_select_dialog_dir_selected(dir: String) -> void:
 		group.text = scene.resource_path
 		group.get_node("Button").pressed.connect(_run_test_group.bind(group))
 		test_group_vbox.add_child(group)
+
 
 func _run_test_group(test_group: Control) -> void:
 	var path: String = test_group.text

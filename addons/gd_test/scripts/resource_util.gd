@@ -1,6 +1,7 @@
 class_name ResourceUtil
 extends RefCounted
 
+
 static func find_scenes(path: String) -> Array[PackedScene]:
 	if path[-1] != '/':
 		path += '/'

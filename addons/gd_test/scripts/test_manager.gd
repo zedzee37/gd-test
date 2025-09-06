@@ -1,7 +1,9 @@
 class_name TestManager
 extends Node
 
+
 @export var test_path: String = "res://test/"
+
 
 func _ready() -> void:
 	var scenes := ResourceUtil.find_scenes(test_path)
